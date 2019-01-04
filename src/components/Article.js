@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 
-import { Subline } from 'components';
+import { Author, Subline } from 'components';
 
 const Post = styled.article`
   display: flex;
@@ -34,7 +34,7 @@ const Excerpt = styled.p`
   margin-bottom: 1rem;
 `;
 
-const Article = ({ title, date, excerpt, slug, timeToRead, category }) => {
+const Article = ({ title, author,  date, excerpt, slug, timeToRead, category }) => {
   const firstChar = title.charAt(0);
 
   return (
@@ -43,6 +43,7 @@ const Article = ({ title, date, excerpt, slug, timeToRead, category }) => {
         <Initiale>{firstChar}</Initiale>
         <Link to={slug}>{title}</Link>
       </Title>
+      <Author>By {author}</Author>
       <Subline>
         {date} &mdash; {timeToRead} Min Read &mdash; In{' '}
         <Link to={`/categories/${kebabCase(category)}`}>{category}</Link>
@@ -56,6 +57,7 @@ export default Article;
 
 Article.propTypes = {
   title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,

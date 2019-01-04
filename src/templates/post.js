@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
 import styled from 'styled-components';
 import kebabCase from 'lodash/kebabCase';
-import { Layout, Wrapper, Header, Subline, SEO, PrevNext } from 'components';
+import { Layout, Author, Wrapper, Header, Subline, SEO, PrevNext } from 'components';
 import { media } from '../utils/media';
 import config from '../../config/SiteConfig';
 import '../utils/prismjs-theme.css';
@@ -47,6 +47,7 @@ const Post = ({ pageContext: { slug, prev, next }, data: { markdownRemark: postN
         </Header>
         <Content>
           <Title>{post.title}</Title>
+          <Author>By {post.author}</Author>
           <Subline>
             {post.date} &mdash; {postNode.timeToRead} Min Read &mdash; In{' '}
             <Link to={`/categories/${kebabCase(post.category)}`}>{post.category}</Link>
@@ -88,6 +89,7 @@ export const postQuery = graphql`
         title
         date(formatString: "DD.MM.YYYY")
         category
+        author
       }
       timeToRead
     }

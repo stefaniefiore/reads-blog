@@ -49,6 +49,7 @@ const BlogPage = ({
         {postEdges.map(post => (
           <Article
             title={post.node.frontmatter.title}
+            author={post.node.frontmatter.author}
             date={post.node.frontmatter.date}
             excerpt={post.node.excerpt}
             timeToRead={post.node.timeToRead}
@@ -84,6 +85,7 @@ export const BlogQuery = graphql`
             title
             date(formatString: "DD.MM.YYYY")
             category
+            author
           }
           excerpt(pruneLength: 200)
           timeToRead

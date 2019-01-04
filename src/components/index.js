@@ -1,3 +1,4 @@
+import Author from './Author';
 import Article from './Article';
 import Button from './Button';
 import Header from './Header';
@@ -8,4 +9,4 @@ import SEO from './SEO';
 import Subline from './Subline';
 import Wrapper from './Wrapper';
 
-export { Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper };
+export { Author, Article, Button, Header, Layout, PrevNext, SectionTitle, SEO, Subline, Wrapper };
