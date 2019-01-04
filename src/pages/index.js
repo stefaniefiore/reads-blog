@@ -45,18 +45,16 @@ const IndexPage = ({
   <Layout>
     <Wrapper>
       <Hero>
-        <h1>Stefanie Fiore</h1>
         <p>
-          Boo
+          <span>Stefanie Fiore<span> is a Toronto-based digital project manager and strategist with a passion for leading cross-functional teams in the delivery of delightful, impactful digital experiences for humans across the globe. She is currently working at TWG.
         </p>
-        <Link to="/blog">
-          <Button big>
-            <svg width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1764 11q33 24 27 64l-256 1536q-5 29-32 45-14 8-31 8-11 0-24-5l-453-185-242 295q-18 23-49 23-13 0-22-4-19-7-30.5-23.5t-11.5-36.5v-349l864-1059-1069 925-395-162q-37-14-40-55-2-40 32-59l1664-960q15-9 32-9 20 0 36 11z" />
-            </svg>
-            Read!
-          </Button>
-        </Link>
+
+        <p>
+          Favourites: <Link to="/blog">reading</Link>, cats, karaoke, etc
+        </p>
+        <p>
+          Contact: email, linkedin
+        </p>
       </Hero>
     </Wrapper>
   </Layout>
